@@ -4,8 +4,12 @@
 <head>
 
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
+    <script src="/__/firebase/9.6.6/firebase-app-compat.js"></script>
+    <script src="/__/firebase/9.6.6/firebase-auth-compat.js"></script>
+    <script src="/__/firebase/9.6.6/firebase-firestore-compat.js"></script>
+    <script src="/__/firebase/init.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
-    <title>Page - New Project</title>
+    <title>Freaktonia - Registro</title>
     <meta property="og:title" content="Page - New Project" />
     <meta property="og:title" content="Page1 - New Project" />
 
@@ -98,27 +102,27 @@
             <header data-role="Header" class="page-header">
                 <div class="page-container1">
                     <img alt="image"
-                         src="0246d3ee-107d-4daf-aa34-7ff8e5c15054"
+                         src="https://firebasestorage.googleapis.com/v0/b/dnd-en-espaniol.appspot.com/o/Imagen%20de%20Perfil%201%403x.png?alt=media&token=cbb42190-3ba8-4e24-a284-9bff07780e57"
                          class="page-image" />
                     <img alt="image"
-                         src="981d8d42-75e8-48e2-973d-3a0c57629792"
+                         src="https://firebasestorage.googleapis.com/v0/b/dnd-en-espaniol.appspot.com/o/Logotipo_Negro%402x.png?alt=media&token=ef5e438d-7753-47a5-b0ed-18520867a839"
                          class="page-image1" />
                 </div>
                 <div class="page-nav">
                     <nav class="page-nav1">
-                        <span class="page-text">Recursos</span>
-                        <a href="https://firebasestorage.googleapis.com/v0/b/dnd-en-espaniol.appspot.com/o/17524-espaol-manualdeljugador35revisedve-110425120150-phpapp02-thumbnail-4.jpg?alt=media&amp;token=b1af08a8-2b15-4c7d-98ea-e82f63018b94"
+                        <a href="/index.html"
+                           class="page-link">
+                            Recursos
+                        </a>
+                        <a href="https://firebasestorage.googleapis.com/v0/b/dnd-en-espaniol.appspot.com/o/DD_Hoja_de_Personaje_3.5-editable%20(1).pdf?alt=media&token=7621a47f-acf5-411d-9da9-1d9b187dcc56"
                            target="_blank"
                            rel="noreferrer noopener"
                            class="page-link">
                             Hoja De Personaje
                         </a>
-                        <span class="page-text01">Twitch</span>
-                        <span class="page-text02">YouTube</span>
+                        <a href="https://www.youtube.com/channel/UCPiJ8ZOBLzFP1roUf3WcrvQ"
+                           class="page-link">YouTube</a>
                     </nav>
-                </div>
-                <div class="page-btn-group">
-                    <button class="button">Entrar/Registro</button>
                 </div>
                 <div class="page-container2">
                     <div data-type="BurgerMenu" class="page-burger-menu">
@@ -151,32 +155,41 @@
                     </div>
                 </div>
             </header>
-            <a href="/page1.html" class="page-navlink button">Entrar</a>
+            <button onclick="login()" class="page-navlink button">Entrar</button>
             <span class="page-text03"><span>Entrar</span></span>
-            <input type="email" placeholder="Email" class="page-textinput input" />
+            <input type="email" placeholder="Email" class="page-textinput input" id="email_field_login" />
             <input type="password"
                    placeholder="Password"
-                   class="page-textinput1 input" />
-            <input type="email" placeholder="Email" class="page-textinput2 input" />
+                   class="page-textinput1 input"
+                   id="password_field_login"/>
+            <input type="email" placeholder="Email" class="page-textinput2 input" id="email_field_register"/>
             <input type="password"
                    placeholder="Password"
-                   class="page-textinput3 input" />
-            <input type="password"
-                   placeholder="Confirm password"
-                   class="page-textinput4 input" />
+                   class="page-textinput3 input"
+                   id="password_field_register"/>
             <span class="page-text05"><span>Registro</span></span>
-            <a href="/page1.html" class="page-navlink1 button">
-                <span>
-                    <span>Registrar</span>
-                    <span></span>
-                </span>
-            </a>
+            <button onclick="register()" class="page-navlink1 button">Registrar</button>
         </div>
     </div>
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
+        import {
+            getFirestore,
+            collection,
+            addDoc,
+            query,
+            orderBy,
+            limit,
+            onSnapshot,
+            setDoc,
+            updateDoc,
+            doc,
+            serverTimestamp,
+        } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js';
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -194,7 +207,7 @@
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
     </script>
-</body>
-</html>
+    <script src="src/page.js"></script>
+</body >
+</html >

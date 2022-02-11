@@ -1,63 +1,114 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <title>Page1 - New Project</title>
+<head>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
+    <script src="/__/firebase/9.6.6/firebase-app-compat.js"></script>
+    <script src="/__/firebase/9.6.6/firebase-auth-compat.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <title>Registro</title>
     <meta property="og:title" content="Page1 - New Project" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
     <style>
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+            button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0;
+            }
+
+            button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+                outline: 1px dotted ButtonText;
+            }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
     </style>
     <style>
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
-
-      }
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+        }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
     <link rel="stylesheet" href="./style.css" />
-  </head>
+</head>
   <body>
     <div>
       <link href="./page1.css" rel="stylesheet" />
 
       <div class="page1-container">
         <header data-role="Header" class="page1-header">
-          <div class="page1-container1">
-            <img
-              alt="image"
-              src="0246d3ee-107d-4daf-aa34-7ff8e5c15054"
-              class="page1-image"
-            />
-            <img
-              alt="image"
-              src="981d8d42-75e8-48e2-973d-3a0c57629792"
-              class="page1-image1"
-            />
-          </div>
+            <div class="page1-container1">
+                <img alt="image"
+                     src="https://firebasestorage.googleapis.com/v0/b/dnd-en-espaniol.appspot.com/o/Imagen%20de%20Perfil%201%403x.png?alt=media&token=cbb42190-3ba8-4e24-a284-9bff07780e57"
+                     class="page1-image" />
+                <img alt="image"
+                     src="https://firebasestorage.googleapis.com/v0/b/dnd-en-espaniol.appspot.com/o/Logotipo_Negro%402x.png?alt=media&token=ef5e438d-7753-47a5-b0ed-18520867a839"
+                     class="page1-image1" />
+            </div>
           <div class="page1-nav">
             <nav class="page1-nav1">
               <span class="page1-text">Recursos</span>
               <a
-                href="https://firebasestorage.googleapis.com/v0/b/dnd-en-espaniol.appspot.com/o/17524-espaol-manualdeljugador35revisedve-110425120150-phpapp02-thumbnail-4.jpg?alt=media&amp;token=b1af08a8-2b15-4c7d-98ea-e82f63018b94"
+                href="https://firebasestorage.googleapis.com/v0/b/dnd-en-espaniol.appspot.com/o/DD_Hoja_de_Personaje_3.5-editable%20(1).pdf?alt=media&token=7621a47f-acf5-411d-9da9-1d9b187dcc56"
                 target="_blank"
                 rel="noreferrer noopener"
                 class="page1-link"
